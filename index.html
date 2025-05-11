@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1d2b3a">
+<head>
+  <meta charset="UTF-8">
+  <title>Beranda</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f2b3a, #34495e);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      width: 100%;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    header h2 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 40px;
+    }
+
+    .circle-link {
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .circle-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker Registered'));
+  }
+</script>
+<body>
+
+  <header>
+    <h1>Selamat Datang </h1>
+    <h2>Situs R1 Pendidikan Matematika 2023</h2>
+  </header>
+
+  <div class="menu">
+    <a href="jadwal.html" class="circle-link">Jadwal<br>Mata Kuliah</a>
+    <a href="mahasiswa.html" class="circle-link">Nama<br>Mahasiswa</a>
+  </div>
+
+  <footer>
+    &copy; by Fakhurroziq Tisa Bughury - mas" cakep dari Tegal
+  </footer>
+
+</body>
+</html>

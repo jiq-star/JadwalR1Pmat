@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Nama Mahasiswa</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      width: 90%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.2em;
+      color: #ffffff;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      background-color: #fff;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      color: white;
+    }
+
+    th {
+      background: rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 25px;
+      color: #00e6ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #a3f0ff;
+    }
+
+    @media screen and (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      tr {
+        margin-bottom: 15px;
+      }
+
+      td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        font-weight: bold;
+        text-align: left;
+        color: #ddd;
+      }
+
+      th {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Daftar Nama Mahasiswa</h2>
+
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Cari berdasarkan NIM atau Nama...">
+
+    <table id="mahasiswaTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>NIM</th>
+          <th>Nama</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="No">1</td>
+          <td data-label="NIM">2304020001</td>
+          <td data-label="Nama">Kiki Anggraeni</td>
+        </tr>
+        <tr>
+          <td data-label="No">2</td>
+          <td data-label="NIM">2304020002</td>
+          <td data-label="Nama">Nala Fitria Azzahra</td>
+        </tr>
+        <tr>
+          <td data-label="No">3</td>
+          <td data-label="NIM">2304020003</td>
+          <td data-label="Nama">Budi Santoso</td>
+        </tr>
+        <tr>
+          <td data-label="No">4</td>
+          <td data-label="NIM">2304020006</td>
+          <td data-label="Nama">Dewi Lestari</td>
+        </tr>
+        <tr>
+          <td data-label="No">4</td>
+          <td data-label="NIM">2304020006</td>
+          <td data-label="Nama">Dewi Lestari</td>
+        </tr>
+        <tr>
+          <td data-label="No">4</td>
+          <td data-label="NIM">2304020006</td>
+          <td data-label="Nama">Dewi Lestari</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a class="back-link" href="index.html">← Kembali ke Halaman Utama</a>
+  </div>
+
+  <script>
+    function searchTable() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("mahasiswaTable");
+      const tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        const tdNIM = tr[i].getElementsByTagName("td")[1];
+        const tdNama = tr[i].getElementsByTagName("td")[2];
+        if (tdNIM && tdNama) {
+          const txtValueNIM = tdNIM.textContent || tdNIM.innerText;
+          const txtValueNama = tdNama.textContent || tdNama.innerText;
+          if (txtValueNIM.toLowerCase().indexOf(filter) > -1 || txtValueNama.toLowerCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
