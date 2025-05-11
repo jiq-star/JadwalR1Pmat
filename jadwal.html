@@ -3,13 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title>Jadwal Mata Kuliah</title>
-  <link rel="stylesheet" href="style/jadwal.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #ffffff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .day {
+      font-size: 1.6em;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #00e6ff;
+    }
+
+    .subject {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 10px;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 50px;
+      font-weight: bold;
+      color: #00e6ff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: #a0eaff;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h2>Jadwal Mata Kuliah R1 PMAT23</h2>
+    <h2>Jadwal Mata Kuliah</h2>
     <div class="grid">
-      <!-- Kartu Hari: Senin -->
       <div class="card">
         <div class="day">Senin</div>
         <div class="subject">
@@ -20,7 +85,7 @@
           SKS: 2
         </div>
       </div>
-      <!-- Selasa -->
+
       <div class="card">
         <div class="day">Selasa</div>
         <div class="subject">
@@ -38,7 +103,7 @@
           SKS: 3
         </div>
       </div>
-      <!-- Rabu -->
+
       <div class="card">
         <div class="day">Rabu</div>
         <div class="subject">
@@ -58,13 +123,13 @@
         <div class="subject">
           <strong>13.00 - 15.30</strong><br>
           Pengantar Analisis Riil<br>
-          Dosen: Prof. Dr. St. Budi Waluya, M.Si.<br>
+          Dosen: Prof. Dr. St. Budi Waluya, M.Si.,<br>
                  Siti Muawanah S.Pd., M.Sc.<br>
           Ruangan: D2-311<br>
           SKS: 3
         </div>
       </div>
-      <!-- Kamis -->
+
       <div class="card">
         <div class="day">Kamis</div>
         <div class="subject">
@@ -82,7 +147,7 @@
           SKS: 3
         </div>
       </div>
-      <!-- Jum'at -->
+
       <div class="card">
         <div class="day">Jum'at</div>
         <div class="subject">
@@ -95,6 +160,7 @@
         </div>
       </div>
     </div>
+
     <a class="back-link" href="index.html">← Kembali ke Halaman Utama</a>
   </div>
 </body>
